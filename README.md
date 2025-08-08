@@ -32,27 +32,23 @@ Triggers an alert if thresholds or patterns indicate potential health deteriorat
 - 6️⃣ Family members can assist the patient immediately
 📷 Screenshots
 App DashboardAI Risk Prediction
-📝 How to Build
+# 📝 How to Build
 Hardware Setup
-Connect MAX30100 to ESP32 via I2C (SCL/SDA)
-Connect SIM800L TX/RX pins to ESP32 UART (use level shifter if needed)
-Power ESP32 and SIM800L appropriately.
-ESP32 Firmware
-Flash your ESP32 with the provided Arduino/PlatformIO code in /firmware.
-Mobile App
-Clone the Flutter project in /flutter_app.
-Run flutter pub get.
-Build and install the app on your mobile device.
-AI Model
-Place your trained model file (e.g., model.tflite) in the app assets directory.
-Update inference logic as needed.
-SMS Configuration
-Set the recipient phone numbers in the ESP32 firmware.
-Test sending SMS manually before relying on automatic alerts.
-📦 Repository Structure
-bash
-Copy code
-├── firmware/ # ESP32 Arduino/PlatformIO code ├── flutter_app/ # Flutter mobile app source code ├── ai_model/ # Scripts & notebooks for training AI model └── README.md # This file 
+- Connect MAX30100 to ESP32 via I2C (SCL/SDA)
+- Connect SIM800L TX/RX pins to ESP32 UART (use level shifter if needed)
+- Power ESP32 and SIM800L appropriately.
+- ESP32 Firmware
+- Flash your ESP32 with the provided Arduino/PlatformIO code in /firmware.
+- Mobile App
+- Clone the Flutter project in /flutter_app.
+- Run flutter pub get.
+- Build and install the app on your mobile device.
+- AI Model :
+Place your trained model file (e.g., model.tflite) in the app assets directory ,but here I used PostMan to make my laptop as A server that handle AI Model while the Mobile Sends Sensor Reading to Server (Ai model) then App makes Request to server and return with output Predict to Application , They connected Together at LOCAL Network ,It Means that the server (my laptop) in this project is the brain of AI model.
+- Update inference logic as needed.
+- SMS Configuration
+- Set the recipient phone numbers in the ESP32 firmware.
+- Test sending SMS manually before relying on automatic alerts.
 # 🩺 Use Cases
 - ✅ Patients with congestive heart failure (CHF)
 - ✅ Elderly individuals needing remote oxygen monitoring
@@ -62,7 +58,7 @@ Copy code
 - Push notifications via Firebase instead of SMS
 - Cloud integration for doctor dashboards
 - Extended AI model with more vital signs (temperature, BP, ECG)
-📄 License
+- 📄 License
 This project is open-sourced under the MIT License. See LICENSE for details.
-🙌 Acknowledgments
+- 🙌 Acknowledgments
 Special thanks to open-source libraries, the ESP32 and Flutter communities, and everyone working to make affordable healthcare technology accessible.
